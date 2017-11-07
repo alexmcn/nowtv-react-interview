@@ -11,7 +11,8 @@
   border: 1px solid black;
   background-color: white;
 
-  &.off {
-    display: none;
-  }
+}
+
+.tooltip.off {
+  display: none;
 }

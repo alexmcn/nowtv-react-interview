@@ -6,7 +6,7 @@ describe('Message', () => {
   const defaultProps = {
     message: 'This is my message to you',
     timestamp: '1 Feb 2017, 4:27am',
-    userId: '5',
+    userEmail: 'a@a.com',
   };
 
   it('renders without crashing', () => {
@@ -21,5 +21,10 @@ describe('Message', () => {
   it('has a timestamp', () => {
     const renderedItem = shallow(<Message {...defaultProps} />);
     expect(renderedItem.find('[data-unit-test="timestamp"]').text()).toEqual('1 Feb 2017, 4:27am');
+  });
+
+  it('has a tooltip', () => {
+    const renderedItem = shallow(<Message {...defaultProps} />);
+    expect(renderedItem.find('Tooltip').prop('label')).toEqual('a@a.com');
   });
 });
