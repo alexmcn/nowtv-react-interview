@@ -8,14 +8,17 @@ export const getDateOrderedChatLog = state => {
   });
 }
 
+export const getContributorById = (state, memberId) => state.members.find(member => member.id === memberId);
+
 export const getMessageById = (state, messageId) => {
   const message = state.messages.find(message => message.id === messageId);
   const timestamp = moment(message.timestamp).format("D MMM YYYY, h:mma");
+  const user = getContributorById(state, message.userId);
 
   return {
     ...message,
     timestamp,
+    userAvatar: user.avatar,
+    userEmail: user.email,
   };
 };
-
-export const getContributorById = (state, memberId) => state.members.find(member => member.id === memberId);
