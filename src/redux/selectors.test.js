@@ -1,6 +1,7 @@
 import {
   getDateOrderedChatLog,
   getMessageById,
+  getContributorById,
 } from './selectors';
 
 describe('ChatLog selectors', () => {
@@ -24,5 +25,19 @@ describe('ChatLog selectors', () => {
 
   it('getMessageById() gets a message by Id', () => {
     expect(getMessageById(mockState, '3').message).toEqual('message 3');
+  });
+
+  describe('Contributor selectors', () => {
+    const mockState = {
+      members: [
+        { "id": "1", "firstName": "Martin", "lastName": "Bradley" },
+        { "id": "2", "firstName": "Peter", "lastName": "Cliff" },
+        { "id": "3", "firstName": "Sarah", "lastName": "Hill" },
+      ]
+    };
+
+    it('getContributorById() gets a contributor by Id', () => {
+      expect(getContributorById(mockState, '2').lastName).toEqual('Cliff');
+    });
   });
 });

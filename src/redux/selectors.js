@@ -9,3 +9,5 @@ export const getDateOrderedChatLog = state => {
 }
 
 export const getMessageById = (state, messageId) => state.messages.find(message => message.id === messageId);
+
+export const getContributorById = (state, memberId) => state.members.find(member => member.id === memberId);
