@@ -1,0 +1,17 @@
+.target {
+  display: inline;
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  border: 1px solid black;
+  background-color: white;
+
+  &.off {
+    display: none;
+  }
+}
