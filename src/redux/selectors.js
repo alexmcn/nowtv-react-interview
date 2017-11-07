@@ -7,3 +7,5 @@ export const getDateOrderedChatLog = state => {
     return date2 - date1;
   });
 }
+
+export const getMessageById = (state, messageId) => state.messages.find(message => message.id === messageId);
