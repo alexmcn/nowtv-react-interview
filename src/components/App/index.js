@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-
-import { getChatLog, getContributors} from '../../redux/actions';
+import MessageList from '../../components/MessageList/container';
 
 export class App extends Component {
   componentDidMount = () => {
@@ -12,7 +10,7 @@ export class App extends Component {
 
   render() {
     return (
-      <h1>Hello!</h1>
+      <MessageList />
     );
   }
 }
@@ -22,6 +20,4 @@ App.propTypes = {
   getContributors: PropTypes.func,
 };
 
-const mapDispatchToProps = { getChatLog, getContributors };
-
-export default connect(null, mapDispatchToProps)(App);
+export default App;

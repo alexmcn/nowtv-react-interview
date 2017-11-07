@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import promiseMiddleware from 'redux-promise-middleware';
-import reducer from './reducer';
+import reducer, { initialState } from './reducer';
 
 const composeEnhancers =
   typeof window === 'object' &&
@@ -12,7 +12,7 @@ const enhancer = composeEnhancers(
 );
 
 const configureStore = () => {
-  return createStore(reducer, {}, enhancer);
+  return createStore(reducer, initialState, enhancer);
 };
 
 export default configureStore;

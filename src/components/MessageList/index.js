@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Message from '../../components/Message/'
+import Message from '../../components/Message/container'
 
 const MessageList = ({messages}) => {
   if (!messages) return null;

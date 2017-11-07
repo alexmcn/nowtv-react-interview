@@ -5,7 +5,7 @@ import configureStore from './redux/store';
 
 const store = configureStore();
 
-import App from './components/App';
+import App from './components/App/container';
 import './index.css';
 
 ReactDOM.render(

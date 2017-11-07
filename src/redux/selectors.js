@@ -1,5 +1,4 @@
 import moment from 'moment';
-import { getChatLog } from './actions';
 
 export const getDateOrderedChatLog = state => {
   return state.messages.sort((message1, message2) => {

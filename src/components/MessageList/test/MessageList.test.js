@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import MessageList from '../index.js';
-import Message from '../../../components/Message';
+import Message from '../../../components/Message/container';
 
 describe('Message', () => {
   const defaultProps = {
