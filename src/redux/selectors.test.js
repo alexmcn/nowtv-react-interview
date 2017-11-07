@@ -27,6 +27,10 @@ describe('ChatLog selectors', () => {
     expect(getMessageById(mockState, '3').message).toEqual('message 3');
   });
 
+  it('getMessageById() returns meesages with human readable date', () => {
+    expect(getMessageById(mockState, '3').timestamp).toEqual('1 Feb 2017, 4:27am');
+  });
+
   describe('Contributor selectors', () => {
     const mockState = {
       members: [

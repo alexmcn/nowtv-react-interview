@@ -1,3 +1,4 @@
+import moment from 'moment';
 import { getChatLog } from './actions';
 
 export const getDateOrderedChatLog = state => {
@@ -8,6 +9,14 @@ export const getDateOrderedChatLog = state => {
   });
 }
 
-export const getMessageById = (state, messageId) => state.messages.find(message => message.id === messageId);
+export const getMessageById = (state, messageId) => {
+  const message = state.messages.find(message => message.id === messageId);
+  const timestamp = moment(message.timestamp).format("D MMM YYYY, h:mma");
+
+  return {
+    ...message,
+    timestamp,
+  };
+};
 
 export const getContributorById = (state, memberId) => state.members.find(member => member.id === memberId);
