@@ -7,6 +7,7 @@ describe('Message', () => {
     message: 'This is my message to you',
     timestamp: '1 Feb 2017, 4:27am',
     userEmail: 'a@a.com',
+    userAvatar: 'avvy',
   };
 
   it('renders without crashing', () => {
@@ -26,5 +27,10 @@ describe('Message', () => {
   it('has a tooltip', () => {
     const renderedItem = shallow(<Message {...defaultProps} />);
     expect(renderedItem.find('Tooltip').prop('label')).toEqual('a@a.com');
+  });
+
+  it('has an avatar', () => {
+    const renderedItem = shallow(<Message {...defaultProps} />);
+    expect(renderedItem.find('Avatar').prop('src')).toEqual('avvy');
   });
 });
